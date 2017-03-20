@@ -1,0 +1,34 @@
+{
+  "name": "docker-node-js",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Frank <fbelanger@ackroo.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/frank184/docker_node_js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "install": {
+    "path": "public",
+    "sources": {
+      "bootstrap": [
+        "bower_components/bootstrap/dist/css/bootstrap.min.css",
+        "bower_components/bootstrap/dist/js/bootstrap.min.js",
+        "bower_components/bootstrap/dist/fonts/**"
+      ],
+      "jquery": [
+        "bower_components/jquery/dist/jquery.min.js"
+      ]
+    }
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.0"
+  }
+}

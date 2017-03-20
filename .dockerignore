@@ -1,2 +1,11 @@
+.git
+.idea
+**/.DS_Store
+doc
+log
+docker.tar
+docker-test.tar
+tmp-db
+
 node_modules
 npm-debug.log

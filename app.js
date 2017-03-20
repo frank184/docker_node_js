@@ -2,10 +2,6 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var expressLayouts = require('express-ejs-layouts')
 
-var router = require('./config/routes')
-var db = require('./config/db')
-
-var connection = db()
 var app = module.exports = express()
 
 app.listen(3000, function() {
@@ -22,4 +18,7 @@ app.set('layout', 'layouts/application')
 app.use(expressLayouts)
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(__dirname + '/public'))
-app.use('/', router)
+
+app.connection = require('./config/db')
+app.use(require('./config/routes'))
+app.use(require('./config/assets'))

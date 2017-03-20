@@ -12,4 +12,9 @@ RUN npm install
 # Bundle app source
 COPY . /var/www/docker-node-js/
 
+RUN npm install -g bower bower-installer
+RUN echo '{ "allow_root": true }' > /root/.bowerrc
+RUN bower install
+RUN bower-installer
+
 CMD [ "npm", "start" ]

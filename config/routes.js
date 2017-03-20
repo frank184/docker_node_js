@@ -1,5 +1,6 @@
 var express = require('express')
 var router = express.Router()
+var path = require('path')
 
 var controllers = require('require-all')({
   dirname     :  __dirname + '/../app/controllers',
@@ -16,5 +17,10 @@ router.use(function(req, res, next) {
 
 // root path
 router.get('/', controllers.home_controller.index)
+// 404
+router.get('*', function(req, res) {
+  file = path.resolve(__dirname + '/../public/404.html')
+  res.sendFile(file)
+})
 
 module.exports = router
