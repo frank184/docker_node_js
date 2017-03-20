@@ -18,6 +18,6 @@ services:
       - "./app:/src/app"
     ports:
       - "3000:3000"
-    command: node /var/www/docker-node-js/
+    command: npm start /var/www/docker-node-js/
     depends_on:
       - db
